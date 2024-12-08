@@ -87,8 +87,8 @@ class VQModel(nn.Module):
         dec = self.decoder(quant)
         return dec
 
-    def decode_tokens(self, tokens):
-        quant_b = self.quantize.embed_code(tokens)
+    def decode_tokens(self, tokens, size=None):
+        quant_b = self.quantize.embed_code(tokens, size=size)
         dec = self.decode(quant_b)
         return dec
 
